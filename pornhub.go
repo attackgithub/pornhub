@@ -23,7 +23,7 @@ func SearchVideos(search string) (PornhubSearchResult) {
 	var result PornhubSearchResult
 	err := json.Unmarshal(b, &result)
 	if err != nil {
-   		log.Fatal(err)
+		log.Fatal(err)
 	}
 	return result
 }
