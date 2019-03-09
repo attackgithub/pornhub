@@ -13,7 +13,7 @@ import (
 const apiURL = "http://www.pornhub.com/webmasters/"
 const APITimeout = 3
 
-func SearchVideos(search string) (PornhubSearchResult) {
+func SearchVideos(search string) PornhubSearchResult {
 	timeout := time.Duration(APITimeout * time.Second)
 	client := http.Client{
 		Timeout: timeout,
@@ -28,7 +28,7 @@ func SearchVideos(search string) (PornhubSearchResult) {
 	return result
 }
 
-func GetVideoByID(ID string) (PornhubSingleVideo) {
+func GetVideoByID(ID string) PornhubSingleVideo {
 	resp, _ := http.Get(fmt.Sprintf(apiURL+"video_by_id?id=%s", ID))
 	b, _ := ioutil.ReadAll(resp.Body)
 	var result PornhubSingleVideo
@@ -40,7 +40,7 @@ func GetVideoByID(ID string) (PornhubSingleVideo) {
 
 }
 
-func GetVideoEmbedCode(ID string) (PornhubEmbedCode) {
+func GetVideoEmbedCode(ID string) PornhubEmbedCode {
 	resp, _ := http.Get(fmt.Sprintf(apiURL+"video_embed_code?id=%s", ID))
 	b, _ := ioutil.ReadAll(resp.Body)
 	var result PornhubEmbedCode
