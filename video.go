@@ -3,7 +3,7 @@ package pornhub
 type PornhubVideo struct {
 	ID           string  `json:"video_id,omitempty"`
 	Duration     string  `json:"duration,omitempty"`
-	Views        float64 `json:"views,omitempty"`
+	//Views        float64 `json:"views,omitempty"`
 	Rating       string  `json:"rating,omitempty"`
 	Ratings      float64 `json:"ratings,omitempty"`
 	Title        string  `json:"title,omitempty"`
